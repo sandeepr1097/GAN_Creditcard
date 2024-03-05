@@ -32,7 +32,7 @@ if submit:
     prediction = model.predict(df)
     st.write(prediction)
 
-if prediction[0] == 1:
+if 1 in prediction:
     st.warning('Alert: Fradulant Transaction!')
 else:
     st.warning('Alert: Legitimate Transaction!')
