@@ -20,38 +20,20 @@ st.title("Credit Card Fraud Detection Model")
 
 st.image("Credit_Card_Fraud_Logo.jpg")
 
-input_df = st.text_input("Please provide all the required feature details: ")
-input_df_split = input_df.split(',')
 
-submit = st.button("Submit")
-
-new_model = joblib.load()
-
-
-if submit:
-    
-    models = pickle.load(open('model.pkl', 'rb'))
-    features = np.asarray(input_df_split,dtype = np.float64)
-    prediction = models.predict(features.reshape(1, -1))
-    print(prediction)
-    if prediction[0] == 1:
-        st.warning('Alert: Fradulant Transaction!')
-    else:
-        st.warning('Alert: Legitimate Transaction!')
-
-'''input_df = st.file_uploader("Upload a CSV file", type=["csv"])
+input_df = st.file_uploader("Upload a CSV file", type=["csv"])
 df = pd.read_csv(input_df)
 st.write('### Uploaded CSV file:')
 st.write(df)
 submit = st.button("Submit")
 
 if submit:
-    model = pickle.load(open('model.pkl', 'rb'))
-    prediction = model.predict(df)
+    new_model = joblib.load(Gan_Final_Shark)
+    prediction = new_model.predict(df_own)
     st.write(prediction)
 
     if 1 in prediction:
         st.warning('Alert: Fradulant Transaction!')
     else:
         st.warning('Alert: Legitimate Transaction!')
-'''
+
