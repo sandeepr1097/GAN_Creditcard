@@ -11,6 +11,7 @@ import pickle
 import pandas as pd
 import numpy as np
 import sklearn
+import joblib
 import imblearn
 import streamlit as st
 from PIL import Image
@@ -24,7 +25,11 @@ input_df_split = input_df.split(',')
 
 submit = st.button("Submit")
 
+new_model = joblib.load()
+
+
 if submit:
+    
     models = pickle.load(open('model.pkl', 'rb'))
     features = np.asarray(input_df_split,dtype = np.float64)
     prediction = models.predict(features.reshape(1, -1))
