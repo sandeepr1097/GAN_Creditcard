@@ -30,6 +30,7 @@ submit = st.button("Submit")
 if submit:
     model = pickle.load(open('model.pkl', 'rb'))
     prediction = model.predict(df)
+    st.write(prediction)
 
 if prediction == 1:
     st.warning('Alert: Fradulant Transaction!')
