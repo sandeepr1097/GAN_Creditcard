@@ -8,7 +8,7 @@ Original file is located at
 """
 
 import pickle
-import pandas
+import pandas as pd
 import numpy as np
 import sklearn
 import imblearn
