@@ -31,7 +31,7 @@ if submit:
     model = pickle.load(open('model.pkl', 'rb'))
     prediction = model.predict(df)
 
-  if prediction == 1:
+if prediction == 1:
     st.warning('Alert: Fradulant Transaction!')
-  else:
+else:
     st.warning('Alert: Legitimate Transaction!')
