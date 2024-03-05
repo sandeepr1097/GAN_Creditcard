@@ -21,7 +21,7 @@ st.image("Credit_Card_Fraud_Logo.jpg")
 
 
 
-input_df = file_uploader("Upload a CSV file", type=["csv"])
+input_df = st.file_uploader("Upload a CSV file", type=["csv"])
 df = pd.read_csv(input_df)
 st.write('### Uploaded CSV file:')
 st.write(df)
