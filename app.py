@@ -29,9 +29,6 @@ submit = st.button("Submit")
 
 if submit:
     model = pickle.load(open('model.pkl', 'rb'))
-    features = np.asarray(model,dtype = np.float64)
-    prediction = model.predict(features.reshape(1,-1))
-
     prediction = model.predict(input_df)
     st.write(prediction)
 
