@@ -30,7 +30,8 @@ submit = st.button("Submit")
 if submit:
     Gan_Final_Shark_path = "model.pkl"
     new_model = joblib.load(Gan_Final_Shark_path)
-    prediction = new_model.predict(df)
+    prediction = new_model.predict(features.reshape(1,-1))
+    #prediction = new_model.predict(df)
     st.write(prediction)
 
     if 1 in prediction:
