@@ -32,7 +32,8 @@ st.write(df)
 submit = st.button("Submit")
 '''
 if submit:
-    Gan_Final_Shark_path = "sandeepr1097/GAN_Creditcard/model.pkl" with open(Gan_Final_Shark_path, 'rb') as file:
+    Gan_Final_Shark_path = "sandeepr1097/GAN_Creditcard/model.pkl" 
+        with open(Gan_Final_Shark_path, 'rb') as file:
     new_model = pickle.load(file)
 
     '''
