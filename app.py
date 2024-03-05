@@ -8,6 +8,7 @@ Original file is located at
 """
 
 import pickle
+import scikit-learn
 import pandas as pd
 import numpy as np
 import sklearn
