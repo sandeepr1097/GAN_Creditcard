@@ -28,7 +28,7 @@ if submit:
     models = pickle.load(open('model.pkl', 'rb'))
     features = np.asarray(input_df_split,dtype = np.float64)
     prediction = models.predict(features.reshape(1, -1))
-
+    print(prediction)
     if prediction[0] == 1:
         st.warning('Alert: Fradulant Transaction!')
     else:
