@@ -20,16 +20,20 @@ st.title("Credit Card Fraud Detection Model")
 
 st.image("Credit_Card_Fraud_Logo.jpg")
 
+input_df = st.text_input("Please provide all the required feature details: ")
+input_df_split = input_df.split(',')
 
+
+'''
 input_df = st.file_uploader("Upload a CSV file", type=["csv"])
 df = pd.read_csv(input_df)
 st.write('### Uploaded CSV file:')
 st.write(df)
 submit = st.button("Submit")
-
+'''
 if submit:
     Gan_Final_Shark_path = pickle.load(open('model.pkl','rb'))
-    features = np.asarray(df,dtype = np.float64)
+    features = np.asarray(input_df_split,dtype = np.float64)
     prediction = Gan_Final_Shark_path.predict(features.reshape(1,-1))
     st.write(prediction)
 
