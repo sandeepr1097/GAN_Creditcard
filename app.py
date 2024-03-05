@@ -29,10 +29,9 @@ st.write(df)
 submit = st.button("Submit")
 
 if submit:
-    Gan_Final_Shark_path = "model.pkl"
-    new_model = joblib.load(Gan_Final_Shark_path)
-    prediction = new_model.predict(features.reshape(1,-1))
-    #prediction = new_model.predict(df)
+    Gan_Final_Shark_path = pickle.load(open('model.pkl','rb'))
+    features = np.asarray(df,dtype = np.float64)
+    prediction = Gan_Final_Shark_path.predict(features.reshape(1,-1))
     st.write(prediction)
 
     if 1 in prediction:
