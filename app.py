@@ -29,7 +29,7 @@ submit = st.button("Submit")
 
 if submit:
     model = pickle.load(open('model.pkl', 'rb'))
-    prediction = model.predict(df)
+    prediction = model.predict(input_df)
     st.write(prediction)
 
 if 1 in prediction:
