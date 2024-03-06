@@ -13,7 +13,6 @@ import numpy as np
 import sklearn
 import joblib
 import imblearn
-import RandomForestClassifier
 import streamlit as st
 from PIL import Image
 
