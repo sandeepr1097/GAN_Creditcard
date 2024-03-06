@@ -37,7 +37,10 @@ submit = st.button("Submit")
 
 if submit:
     prediction = loaded_model.predict(df)
-
+    if 1 in prediction:
+        st.warning('Alert: Fradulant Transaction!')
+    else:
+        st.warning('Alert: Legitimate Transaction!')
 
 
 
@@ -50,10 +53,7 @@ if submit:
     prediction = model.predict(np.array(features).reshape(1, -1))
     st.write(prediction)
 '''
-    if 1 in prediction:
-        st.warning('Alert: Fradulant Transaction!')
-    else:
-        st.warning('Alert: Legitimate Transaction!')
+    
 
 ''' Gan_Final_Shark_path = "sandeepr1097/GAN_Creditcard/model.pkl" 
 with open(Gan_Final_Shark_path, 'rb') as file:
