@@ -20,8 +20,12 @@ from PIL import Image
 st.title("Credit Card Fraud Detection Model")
 
 st.image("Credit_Card_Fraud_Logo.jpg")
-input_df = st.text_input("Please provide all the required feature details: ")
-input_df_split = input_df.split(',')
+#input_df = st.text_input("Please provide all the required feature details: ")
+#input_df_split = input_df.split(',')
+
+input_df = st.file_uploader("Upload CSV File:", type = 'csv')
+df = pd.read_csv(input_df)
+st.write(df)
 
 submit = st.button("Submit")
 
