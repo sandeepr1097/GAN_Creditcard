@@ -26,6 +26,7 @@ input_df_split = input_df.split(',')
 
 submit = st.button("Submit")
 '''
+loaded_model = joblib.load('Gan_Final_Shark.joblib')
 #Gan_Final_Shark_path = pickle.load(open('model.pkl','rb'))
 input_df = st.file_uploader("Upload a CSV file", type=["csv"])
 #input_df_split = input_df.split(',')
@@ -35,14 +36,20 @@ st.write(df)
 submit = st.button("Submit")
 
 if submit:
-    model = pickle.load(open('model.pkl','rb'))
+    prediction = loaded_model.predict(df)
+
+
+
+
+    
+   ''' model = pickle.load(open('model.pkl','rb'))
     features = np.asarray(df,dtype = np.float64)
     st.write(features)
     #features = Arrays.toString(features)
     #prediction = new_model.predict(input_df)
     prediction = model.predict(np.array(features).reshape(1, -1))
     st.write(prediction)
-
+'''
     if 1 in prediction:
         st.warning('Alert: Fradulant Transaction!')
     else:
