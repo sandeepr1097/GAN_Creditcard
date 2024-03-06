@@ -25,6 +25,7 @@ input_df_split = input_df.split(',')
 
 submit = st.button("Submit")
 '''
+Gan_Final_Shark_path = pickle.load(open('model.pkl','rb'))
 input_df = st.file_uploader("Upload a CSV file", type=["csv"])
 df = pd.read_csv(input_df)
 st.write('### Uploaded CSV file:')
@@ -32,9 +33,10 @@ st.write(df)
 submit = st.button("Submit")
 
 if submit:
-    Gan_Final_Shark_path = pickle.load(open('model.pkl','rb'))
-    features = np.asarray(input_df_split,dtype = np.float64)
-    prediction = new_model.predict(features.reshape(1,-1))
+    #Gan_Final_Shark_path = pickle.load(open('model.pkl','rb'))
+    #features = np.asarray(input_df_split,dtype = np.float64)
+    #prediction = new_model.predict(features.reshape(1,-1))
+    prediction = new_model.predict(df)
     st.write(prediction)
 
     if 1 in prediction:
