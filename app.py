@@ -26,7 +26,7 @@ input_df_split = input_df.split(',')
 
 submit = st.button("Submit")
 '''
-loaded_model = joblib.load('sandeepr1097/GAN_Creditcard/Gan_Final_Shark.joblib')
+loaded_model = joblib.load('Gan_Final_Shark.sav')
 #Gan_Final_Shark_path = pickle.load(open('model.pkl','rb'))
 input_df = st.file_uploader("Upload a CSV file", type=["csv"])
 #input_df_split = input_df.split(',')
