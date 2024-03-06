@@ -15,7 +15,7 @@ import joblib
 import imblearn
 import streamlit as st
 from PIL import Image
-from io import StringIO
+
 
 st.title("Credit Card Fraud Detection Model")
 
@@ -32,10 +32,11 @@ df = pd.read_csv(input_df)
 st.write('### Uploaded CSV file:')
 st.write(df)
 submit = st.button("Submit")
-stringio = StringIO(input_df.getvalue().decode("utf-8"))
+
 if submit:
     model = pickle.load(open('model.pkl','rb'))
     features = np.array([[input_df]]).astype(np.float64)
+    festures = Arrays.toString(features)
     #prediction = new_model.predict(input_df)
     prediction = Gan_Final_Shark_path.predict(features)
     st.write(prediction)
