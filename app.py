@@ -32,11 +32,6 @@ st.write(df)
 submit = st.button("Submit")
 
 if submit:
-   ''' Gan_Final_Shark_path = "sandeepr1097/GAN_Creditcard/model.pkl" 
-with open(Gan_Final_Shark_path, 'rb') as file:
-    new_model = pickle.load(file)
-
-    '''
     Gan_Final_Shark_path = pickle.load(open('model.pkl','rb'))
     features = np.asarray(input_df_split,dtype = np.float64)
     prediction = new_model.predict(features.reshape(1,-1))
@@ -47,3 +42,6 @@ with open(Gan_Final_Shark_path, 'rb') as file:
     else:
         st.warning('Alert: Legitimate Transaction!')
 
+''' Gan_Final_Shark_path = "sandeepr1097/GAN_Creditcard/model.pkl" 
+with open(Gan_Final_Shark_path, 'rb') as file:
+    new_model = pickle.load(file)'''
