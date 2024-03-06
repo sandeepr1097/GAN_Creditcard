@@ -28,6 +28,7 @@ submit = st.button("Submit")
 '''
 #Gan_Final_Shark_path = pickle.load(open('model.pkl','rb'))
 input_df = st.file_uploader("Upload a CSV file", type=["csv"])
+input_df_split = input_df.split(',')
 df = pd.read_csv(input_df)
 st.write('### Uploaded CSV file:')
 st.write(df)
@@ -35,8 +36,8 @@ submit = st.button("Submit")
 
 if submit:
     model = pickle.load(open('model.pkl','rb'))
-    features = np.array([[input_df]]).astype(np.float64)
-    festures = Arrays.toString(features)
+    features = np.asarray(input_df_split,dtype = np.float64)
+    features = Arrays.toString(features)
     #prediction = new_model.predict(input_df)
     prediction = Gan_Final_Shark_path.predict(features)
     st.write(prediction)
