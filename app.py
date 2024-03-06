@@ -28,7 +28,7 @@ submit = st.button("Submit")
 '''
 #Gan_Final_Shark_path = pickle.load(open('model.pkl','rb'))
 input_df = st.file_uploader("Upload a CSV file", type=["csv"])
-input_df_split = input_df.split(',')
+#input_df_split = input_df.split(',')
 df = pd.read_csv(input_df)
 st.write('### Uploaded CSV file:')
 st.write(df)
