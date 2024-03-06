@@ -35,7 +35,7 @@ submit = st.button("Submit")
 stringio = StringIO(input_df.getvalue().decode("utf-8"))
 if submit:
     model = pickle.load(open('model.pkl','rb'))
-    features = np.array([[input_df_split]]).astype(np.float64)
+    features = np.array([[input_df]]).astype(np.float64)
     #prediction = new_model.predict(input_df)
     prediction = Gan_Final_Shark_path.predict(features)
     st.write(prediction)
