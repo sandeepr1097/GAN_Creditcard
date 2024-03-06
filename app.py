@@ -38,9 +38,9 @@ if submit:
     model = pickle.load(open('model.pkl','rb'))
     features = np.asarray(input_df,dtype = np.float64)
     st.write(features)
-    features = Arrays.toString(features)
+    #features = Arrays.toString(features)
     #prediction = new_model.predict(input_df)
-    prediction = model.predict(features)
+    prediction = model.predict(np.array(features).reshape(1, -1))
     st.write(prediction)
 
     if 1 in prediction:
