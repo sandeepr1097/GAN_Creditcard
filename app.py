@@ -33,7 +33,7 @@ if input_df!= None:
     
     if submit:
         model = joblib.load('Gan_Final_Shark')
-        #features = np.
+        prediction = model.predict(df)
        #features = np.asarray(input_df_split,dtype = np.float64)
         #prediction = model.predict(features.reshape(1,-1))
         
