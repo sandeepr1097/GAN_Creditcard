@@ -28,7 +28,7 @@ submit = st.button("Submit")
 
 if submit:
     model = pickle.load(open('model.pkl','rb'))
-    model = load_model('Gan_Final_Shark')
+    model = load_model('https://github.com/sandeepr1097/GAN_Creditcard/Gan_Final_Shark')
     features = np.asarray(input_df_split,dtype = np.float64)
     prediction = model.predict(features.reshape(1,-1))
     if 1 in prediction:
