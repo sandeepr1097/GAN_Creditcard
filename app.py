@@ -24,18 +24,21 @@ st.image("Credit_Card_Fraud_Logo.jpg")
 #input_df_split = input_df.split(',')
 
 input_df = st.file_uploader("Upload CSV File:", type = 'csv')
-df = pd.read_csv(input_df)
-st.write(df)
+if input_df!= None:
+    df = pd.read_csv(input_df)
+    st.write(df)
 
-submit = st.button("Submit")
-
-
-if submit:
-    model = joblib.load('Gan_Final_Shark')
-    features = np.asarray(input_df_split,dtype = np.float64)
-    prediction = model.predict(features.reshape(1,-1))
-    if 1 in prediction:
-        st.warning('Alert: Fradulant Transaction!')
-    else:
-        st.warning('Alert: Legitimate Transaction!')
+    submit = st.button("Submit")
+    
+    
+    if submit:
+        model = joblib.load('Gan_Final_Shark')
+        #features = np.
+       #features = np.asarray(input_df_split,dtype = np.float64)
+        #prediction = model.predict(features.reshape(1,-1))
+        
+        if 1 in prediction:
+            st.warning('Alert: Fradulant Transaction!')
+        else:
+            st.warning('Alert: Legitimate Transaction!')
 
