@@ -26,7 +26,7 @@ input_df_split = input_df.split(',')
 
 submit = st.button("Submit")
 '''
-Gan_Final_Shark_path = pickle.load(open('sandeepr1097/GAN_Creditcard/model.pkl','rb'))
+#Gan_Final_Shark_path = pickle.load(open('model.pkl','rb'))
 input_df = st.file_uploader("Upload a CSV file", type=["csv"])
 df = pd.read_csv(input_df)
 st.write('### Uploaded CSV file:')
@@ -34,10 +34,10 @@ st.write(df)
 submit = st.button("Submit")
 stringio = StringIO(input_df.getvalue().decode("utf-8"))
 if submit:
-    #Gan_Final_Shark_path = pickle.load(open('model.pkl','rb'))
+    Gan_Final_Shark_path = pickle.load(open('model.pkl','rb'))
     #features = np.asarray(input_df_split,dtype = np.float64)
     #prediction = new_model.predict(input_df)
-    prediction = new_model.predict(df)
+    prediction = Gan_Final_Shark_path.predict(df)
     st.write(prediction)
 
     if 1 in prediction:
