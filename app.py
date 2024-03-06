@@ -37,10 +37,10 @@ submit = st.button("Submit")
 if submit:
     model = pickle.load(open('model.pkl','rb'))
     features = np.asarray(input_df_split,dtype = np.float64)
-    st.write("features")
+    st.write(features)
     features = Arrays.toString(features)
     #prediction = new_model.predict(input_df)
-    prediction = Gan_Final_Shark_path.predict(features)
+    prediction = model.predict(features)
     st.write(prediction)
 
     if 1 in prediction:
