@@ -25,7 +25,7 @@ input_df_split = input_df.split(',')
 
 submit = st.button("Submit")
 '''
-Gan_Final_Shark_path = pickle.load(open('model.pkl','rb'))
+Gan_Final_Shark_path = pickle.load(open('https://github.com/sandeepr1097/GAN_Creditcard/model.pkl','rb'))
 input_df = st.file_uploader("Upload a CSV file", type=["csv"])
 df = pd.read_csv(input_df)
 st.write('### Uploaded CSV file:')
