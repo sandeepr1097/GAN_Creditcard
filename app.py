@@ -30,15 +30,14 @@ if input_df!= None:
 
     submit = st.button("Submit")
     
-    
-    if submit:
+    if st.button('submit'):
         model = joblib.load('Gan_Final_Shark')
         prediction = model.predict(df)
        #features = np.asarray(input_df_split,dtype = np.float64)
         #prediction = model.predict(features.reshape(1,-1))
         
         if 1 in prediction:
-            st.warning('Alert: Fradulant Transaction!')
+            st.toast('Alert: Fradulant Transaction!', icon = '⚠️')
         else:
-            st.warning('Alert: Legitimate Transaction!')
+            st.toast('Alert: Legitimate Transaction!', icon = '✅' )
 
