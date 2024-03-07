@@ -14,6 +14,7 @@ import sklearn
 import joblib
 import imblearn
 import streamlit as st
+import time
 from PIL import Image
 
 
@@ -37,7 +38,12 @@ if input_df!= None:
         #prediction = model.predict(features.reshape(1,-1))
         
         if 1 in prediction:
-            st.warning(' Alert: Fradulant Transaction!', icon = '⚠️')
+            msg = st.toast('Gathering User Information...')
+            time.sleep(1)
+            msg.toast('Checking Recent Transactions...')
+            time.sleep(1)
+            msg.toast(Alert: Fradulant Transaction!', icon = "⚠️")
+            #st.warning(' Alert: Fradulant Transaction!', icon = '⚠️')
         else:
             st.warning(' Alert: Legitimate Transaction!', icon = '✅' )
 
