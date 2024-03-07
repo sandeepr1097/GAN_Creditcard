@@ -28,16 +28,16 @@ if input_df!= None:
     df = pd.read_csv(input_df)
     st.write(df)
 '''
-    submit = st.button("Submit")
+submit = st.button("Submit")
     
     
-    if submit:
-        model = joblib.load('Gan_Final_Shark')
-        #prediction = model.predict(df)
-        features = np.asarray(input_df_split,dtype = np.float64)
-        prediction = model.predict(features.reshape(1,-1))
+if submit:
+    model = joblib.load('Gan_Final_Shark')
+    #prediction = model.predict(df)
+    features = np.asarray(input_df_split,dtype = np.float64)
+    prediction = model.predict(features.reshape(1,-1))
         
-        if 1 in prediction:
-            st.warning('Alert: Fradulant Transaction!')
-        else:
-            st.warning('Alert: Legitimate Transaction!')
+    if 1 in prediction:
+        st.warning('Alert: Fradulant Transaction!')
+    else:
+        st.warning('Alert: Legitimate Transaction!')
