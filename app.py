@@ -36,13 +36,13 @@ if input_df!= None:
         prediction = model.predict(df)
        #features = np.asarray(input_df_split,dtype = np.float64)
         #prediction = model.predict(features.reshape(1,-1))
+        msg = st.toast('Gathering User Information...')
+        time.sleep(1)
+        msg.toast('Checking Recent Transactions...')
+        time.sleep(1)
         
         if 1 in prediction:
-            msg = st.toast('Gathering User Information...')
-            time.sleep(1)
-            msg.toast('Checking Recent Transactions...')
-            time.sleep(1)
-            msg.toast(Alert: Fradulant Transaction!', icon = "⚠️")
+            msg.toast('Alert: Fradulant Transaction!', icon = "⚠️")
             #st.warning(' Alert: Fradulant Transaction!', icon = '⚠️')
         else:
             st.warning(' Alert: Legitimate Transaction!', icon = '✅' )
