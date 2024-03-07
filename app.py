@@ -37,7 +37,7 @@ if input_df!= None:
         #prediction = model.predict(features.reshape(1,-1))
         
         if 1 in prediction:
-            st.toast('Alert: Fradulant Transaction!', icon = '⚠️')
+            st.toast('Alert: Fradulant Transaction!')
         else:
             st.toast('Alert: Legitimate Transaction!', icon = '✅' )
 
