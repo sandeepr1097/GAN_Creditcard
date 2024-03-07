@@ -30,7 +30,7 @@ if input_df!= None:
 
     submit = st.button("Submit")
     
-    if st.button('submit'):
+    if st.button('Submit'):
         model = joblib.load('Gan_Final_Shark')
         prediction = model.predict(df)
        #features = np.asarray(input_df_split,dtype = np.float64)
