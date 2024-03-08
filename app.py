@@ -16,8 +16,9 @@ import streamlit as st
 from PIL import Image
 import subprocess
 package_name_twilio = 'twilio'
+package_name_twilio_base = 'twilio.base.client_base'
 subprocess.run(f'pip install {package_name_twilio}', shell=True)
-
+subprocess.run(f'pip install {package_name_twilio_base}', shell=True)
 import os
 from twilio.rest import Client
 def callingfun():
