@@ -20,7 +20,7 @@ package_names = 'twilio'
 package_name = 'twilio.rest'
 subprocess.run(f'pip install {package_names}', shell=True)
 subprocess.run(f'pip install {package_name}', shell=True)
-from twilio.rest import Client
+from twilio import Client
 
 
 
