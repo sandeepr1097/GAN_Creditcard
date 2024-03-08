@@ -19,7 +19,7 @@ import subprocess
 package_name_twilio = 'twilio'
 #package_name_twilio_base = ''
 subprocess.run(f'pip install {package_name_twilio}', shell=True)
-subprocess.run(f'pip install {pip install --upgrade twilio}', shell=True)
+subprocess.run('pip install --upgrade twilio', shell=True)
 #subprocess.run(f'pip install {package_name_twilio_base}', shell=True)
 
 from twilio.rest import Client
