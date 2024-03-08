@@ -17,7 +17,7 @@ import streamlit as st
 from PIL import Image
 import subprocess
 package_name_twilio = 'twilio'
-subprocess.run(f'pip install {package_name_twilio}', shell=True)
+subprocess.run('pip install twilio', shell=True)
 
 
 import twilio
