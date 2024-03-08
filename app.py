@@ -16,9 +16,9 @@ import imblearn
 import streamlit as st
 from PIL import Image
 import subprocess
-package_name = 'pywhatkit'
+package_name = 'twilio.rest'
 subprocess.run(f'pip install {package_name}', shell=True)
-import pywhatkit as py
+from twilio.rest import Client
 
 
 
@@ -43,7 +43,6 @@ if input_df!= None:
         
         if 1 in prediction:
             st.warning(' Alert: Fradulant Transaction!', icon = '⚠️')
-            py.sendwhatmsg("+91"+7358261153,' Alert: Fradulant Transaction!')
         else:
             st.warning(' Alert: Legitimate Transaction!', icon = '✅' )
 
