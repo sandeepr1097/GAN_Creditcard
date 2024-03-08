@@ -17,11 +17,10 @@ import streamlit as st
 from PIL import Image
 import subprocess
 package_name_twilio = 'twilio'
-#package_name_twilio_base = ''
 subprocess.run(f'pip install {package_name_twilio}', shell=True)
 
 
-from twilio.rest import Client
+import twilio
 
 def callingfun():
   account_sid = 'AC6d06287d9416698f991295413d02c2bd'
