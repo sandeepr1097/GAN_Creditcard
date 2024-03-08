@@ -15,6 +15,9 @@ import joblib
 import imblearn
 import streamlit as st
 from PIL import Image
+import subprocess
+package_name = 'pywhatkit'
+subprocess.run(f'pip install {package_name}', shell=True)
 import pywhatkit as py
 
 
