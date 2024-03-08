@@ -15,27 +15,9 @@ import joblib
 import imblearn
 import streamlit as st
 from PIL import Image
-import subprocess
-package_name = 'twilio'
-package_names = 'twilio.rest'
-subprocess.run(f'pip install {package_name}', shell=True)
-subprocess.run(f'pip install {package_names}', shell=True)
-from twilio.rest import Client
+import pywhatkit as py
 
-def callingfun():
-  account_sid = 'AC6d06287d9416698f991295413d02c2bd'
-  auth_token_old = 'f90134a5b186afdf510a0724f183c63f'
-  auth_token_New = 'df21315a681bfa787d6663b9a0832cd7'
-  client = Client(account_sid, auth_token_New)
 
-  message = client.messages \
-                  .create(
-                         body="Fraud Transaction Blocking Your Account",
-                         from_='+17627950275',
-                         to='+917358261153'
-                          )
-
-  print(message.sid)
 
 st.title("Credit Card Fraud Detection Model")
 
@@ -58,7 +40,7 @@ if input_df!= None:
         
         if 1 in prediction:
             st.warning(' Alert: Fradulant Transaction!', icon = '⚠️')
-            callingfun()
+            py.sendwhatmsg("+91"+7358261153,' Alert: Fradulant Transaction!')
         else:
             st.warning(' Alert: Legitimate Transaction!', icon = '✅' )
 
