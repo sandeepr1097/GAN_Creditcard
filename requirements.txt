@@ -6,4 +6,4 @@ imbalanced-learn==0.10.1
 streamlit==1.22.0
 Pillow==9.5.0
 aiohttp-retry==2.8.3
-twilio==8.13.0
+twilio==9.0.0
