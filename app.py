@@ -16,11 +16,10 @@ import imblearn
 import streamlit as st
 from PIL import Image
 import subprocess
-package_name_twilio = 'twilio'
 subprocess.run('pip install twilio', shell=True)
 
 
-import twilio
+from twilio.rest import Client
 
 def callingfun():
   account_sid = 'AC6d06287d9416698f991295413d02c2bd'
