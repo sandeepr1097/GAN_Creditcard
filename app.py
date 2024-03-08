@@ -18,6 +18,20 @@ import imblearn
 import streamlit as st
 from PIL import Image
 
+def callingfun():
+  account_sid = 'AC6d06287d9416698f991295413d02c2bd'
+  auth_token_old = 'f90134a5b186afdf510a0724f183c63f'
+  auth_token_New = 'df21315a681bfa787d6663b9a0832cd7'
+  client = Client(account_sid, auth_token_New)
+
+  message = client.messages \
+                  .create(
+                         body="Fraud Transaction Blocking Your Account",
+                         from_='+17627950275',
+                         to='+917358261153'
+                          )
+
+  print(message.sid)
 
 st.title("Credit Card Fraud Detection Model")
 
@@ -39,7 +53,7 @@ if input_df!= None:
         #prediction = model.predict(features.reshape(1,-1))
         
         if 1 in prediction:
-            st.warning(' Alert: Fradulant Transaction!', icon = '⚠️')
+            #st.warning(' Alert: Fradulant Transaction!', callingfun(), icon = '⚠️')
         else:
             st.warning(' Alert: Legitimate Transaction!', icon = '✅' )
 
