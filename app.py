@@ -13,14 +13,11 @@ import numpy as np
 import sklearn
 import joblib
 import imblearn
-from twilio.rest import Client
 import streamlit as st
 from PIL import Image
 import subprocess
 package_name_twilio = 'twilio'
 subprocess.run(f'pip install {package_name_twilio}', shell=True)
-from twilio.rest import Client
-
 
 
 st.title("Credit Card Fraud Detection Model")
