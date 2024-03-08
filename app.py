@@ -16,10 +16,14 @@ import imblearn
 import streamlit as st
 from PIL import Image
 import subprocess
-package_names = 'aiohttp-retry'
-package_name = 'twilio.rest'
-subprocess.run(f'pip install {package_names}', shell=True)
-subprocess.run(f'pip install {package_name}', shell=True)
+package_name_http = 'aiohttp-retry'
+package_name_twilio_rest = 'twilio.rest'
+package_name_twilio = 'twilio'
+package_name_aio_signal = 'aiosignal'
+subprocess.run(f'pip install {package_name_http}', shell=True)
+subprocess.run(f'pip install {package_name_twilio_rest}', shell=True)
+subprocess.run(f'pip install {package_name_twilio}', shell=True)
+subprocess.run(f'pip install {package_name_aio_signal}', shell=True)
 from twilio.rest import Client
 
 
