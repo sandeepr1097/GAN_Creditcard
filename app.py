@@ -8,7 +8,7 @@ Original file is located at
 """
 
 import os
-from twilio.rest import Client
+import Client
 import pickle
 import pandas as pd
 import numpy as np
