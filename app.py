@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1ii98Q-GdyQYg_77I4zaVz8LSanMNN44O
 """
 import os
-from twilio.rest import Client
+import Client
 import os
 import pickle
 import pandas as pd
