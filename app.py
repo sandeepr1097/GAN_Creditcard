@@ -7,8 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1ii98Q-GdyQYg_77I4zaVz8LSanMNN44O
 """
 import os
-from twilio.rest import Client
-import os
 import pickle
 import pandas as pd
 import numpy as np
@@ -17,7 +15,9 @@ import joblib
 import imblearn
 import streamlit as st
 from PIL import Image
-
+import subprocess
+package_name = 'twilio'
+subprocess.run(f'pip install {package_name}', shell=True)
 def callingfun():
   account_sid = 'AC6d06287d9416698f991295413d02c2bd'
   auth_token_old = 'f90134a5b186afdf510a0724f183c63f'
