@@ -19,9 +19,11 @@ import subprocess
 package_name_twilio = 'twilio'
 #package_name_twilio_base = ''
 subprocess.run(f'pip install {package_name_twilio}', shell=True)
+subprocess.run(f'pip install {pip install --upgrade twilio}', shell=True)
 #subprocess.run(f'pip install {package_name_twilio_base}', shell=True)
 
 from twilio.rest import Client
+
 def callingfun():
   account_sid = 'AC6d06287d9416698f991295413d02c2bd'
   auth_token_old = 'f90134a5b186afdf510a0724f183c63f'
