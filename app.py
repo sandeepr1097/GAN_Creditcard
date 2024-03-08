@@ -20,10 +20,14 @@ package_name_http = 'aiohttp-retry'
 package_name_twilio_rest = 'twilio.rest'
 package_name_twilio = 'twilio'
 package_name_aio_signal = 'aiosignal'
+package_name_aio_attrs = 'attrs'
+package_name_aio_list = 'frozenlist'
 subprocess.run(f'pip install {package_name_http}', shell=True)
 subprocess.run(f'pip install {package_name_twilio_rest}', shell=True)
 subprocess.run(f'pip install {package_name_twilio}', shell=True)
 subprocess.run(f'pip install {package_name_aio_signal}', shell=True)
+subprocess.run(f'pip install {package_name_aio_attrs}', shell=True)
+subprocess.run(f'pip install {package_name_aio_list}', shell=True)
 from twilio.rest import Client
 
 
