@@ -39,7 +39,6 @@ if input_df!= None:
         
         if 1 in prediction:
             st.warning(' Alert: Fradulant Transaction!', icon = '⚠️')
-            callingfun()
         else:
             st.warning(' Alert: Legitimate Transaction!', icon = '✅' )
 
