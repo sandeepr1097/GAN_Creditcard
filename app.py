@@ -13,15 +13,12 @@ import numpy as np
 import sklearn
 import joblib
 import imblearn
+from twilio.rest import Client
 import streamlit as st
 from PIL import Image
 import subprocess
-package_name_http = 'requests'
-package_name_twilio_rest = 'twilio.rest'
 package_name_twilio = 'twilio'
-subprocess.run(f'pip install {package_name_twilio_rest}', shell=True)
 subprocess.run(f'pip install {package_name_twilio}', shell=True)
-subprocess.run(f'pip install {package_name_http}', shell=True)
 from twilio.rest import Client
 
 
